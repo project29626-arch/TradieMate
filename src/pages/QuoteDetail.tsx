@@ -440,9 +440,9 @@ export default function QuoteDetail() {
         <div className="bg-white rounded-xl border-2 border-steel shadow-lg overflow-hidden relative">
           <div className="h-3 bg-gradient-to-r from-graphite via-concrete to-hi-vis" />
           
-          <div className="p-8 space-y-6">
+          <div className="p-4 sm:p-8 space-y-6">
             {/* Header info */}
-            <div className="flex justify-between items-start border-b border-steel pb-6">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-start border-b border-steel pb-6 gap-4">
               <div className="space-y-1">
                 {businessProfile?.logoUrl && (
                   <img src={businessProfile.logoUrl} alt="Logo" className="h-10 object-contain mb-3" />
@@ -460,7 +460,7 @@ export default function QuoteDetail() {
                   <p className="text-xs text-concrete font-mono">Ph: {businessProfile.phone}</p>
                 )}
               </div>
-              <div className="text-right space-y-1">
+              <div className="text-left sm:text-right space-y-1">
                 <span className="inline-block text-4xl font-display uppercase tracking-wider text-graphite">Quote</span>
                 <p className="text-sm font-mono text-hi-vis bg-graphite font-bold px-2 py-0.5 rounded inline-block">
                   {quote.quoteNumber}
@@ -550,8 +550,8 @@ export default function QuoteDetail() {
             <div className="space-y-3">
               <span className="block text-xs font-bold uppercase text-concrete tracking-wider">Line Items</span>
               
-              <div className="border border-steel rounded-lg overflow-hidden">
-                <table className="w-full text-left text-sm divide-y divide-steel">
+              <div className="border border-steel rounded-lg overflow-hidden overflow-x-auto">
+                <table className="min-w-[600px] w-full text-left text-sm divide-y divide-steel">
                   <thead className="bg-gray-50 text-xs font-bold uppercase text-concrete tracking-wider">
                     <tr>
                       <th className="p-3 w-3/5">Description</th>
